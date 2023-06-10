@@ -1,0 +1,40 @@
+{% extends "pages/home.html" %}
+{% block title %}
+chi tiet giang vien
+{% endblock %}
+{% block content %}
+<div class="MuiBoxItem_Left MuiBoxTeacher">
+    <div class="information py-2">
+        <form action="" class="formQLTT">
+            <h3 class="text-center">Chi tiết thông tin</h3>
+            <div class="group mssv">
+                <div class="row">
+                    <div class="col-6 detail-item">
+                        <label for="" class="detail-label">Mã Số Giảng Viên:</label>
+                        <span class="detail_text" id="mssv">{{Teacher.msgv}}</span>
+                    </div>
+                    <div class="col-6 detail-item">
+                        <label for="" class="detail-label">Họ và tên:</label>
+                        <span class="detail_text" id="name">{{Teacher.name}}</span>
+                    </div>
+                    <div class="col-6 detail-item ">
+                        <label for="" class="detail-label">Email:</label>
+                        <span class="detail_text" id="email">{{Teacher.email}}</span>
+                    </div>
+                    <div class="col-6 detail-item">
+                        <label for="" class="detail-label">SDT:</label>
+                        <span class="detail_text" id="phone">{{Teacher.phone}}</span>
+                    </div>
+                    <div class="col-12 py-2">
+                        <div class="row justify-content-end">
+                            <div class="col-2 txtBtn">
+                                <a href="/myhome/home" type="button" class="btn txtOK">Quay Lại</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
