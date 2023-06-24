@@ -1,5 +1,7 @@
 from urllib import request
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
+from .form import newForm
 
 # Create your views here.
 from django.http import HttpResponse
@@ -25,3 +27,25 @@ def list_id1(request,id):
     return render (request,'pages/detail2.html',{"Teacher":Teacher})
 def error(error):
     return render(error,'pages/error.html')
+# class newStudent(CreateView):
+#     model = student
+#     template_name ='student_new.html'
+#     field ='__all__'
+def home_view(request):
+    # context ={}
+    # context['form']= newForm()
+    # return render (request,"pages/student_new.html",context)
+    if request.method =="POST":
+        form = newForm (request.POST)
+        if form.is_valid():
+            post = student()
+            post.mssv = request.POST['mssv']
+            post.name = request.POST['name']
+            post.email = request.POST['email']
+            post.phone = request.POST['phone']
+            post.date = request.POST['date']
+            post.save()
+            return render (request,"pages/home.html")
+    else:
+        form = newForm()
+        return render (request,"pages/student_new.html",{'form':form})

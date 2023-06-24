@@ -3,6 +3,7 @@ from .import views
 
 
 urlpatterns =[
+    path('/student/new/', views.home_view ,name='student_new'),
     path('/home',views.list),
     path('/contact',views.pan),
     path('/error',views.error),
