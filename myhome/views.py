@@ -9,7 +9,7 @@ from .models import student
 from .models import teachers
 def list (request):
     Data ={'students':student.objects.all().order_by('-date')}
-    return render (request,'pages/home.html',Data)
+    return render (request,'pages/base.html',Data)
 def list_teachers (request):
     Data1 ={'teachers':teachers.objects.all()}
     return render (request,'pages/teachers.html',Data1)
@@ -27,6 +27,8 @@ def list_id1(request,id):
     return render (request,'pages/detail2.html',{"Teacher":Teacher})
 def error(error):
     return render(error,'pages/error.html')
+def register(register):
+    return render(register,'registration/login.html')
 # class newStudent(CreateView):
 #     model = student
 #     template_name ='student_new.html'
@@ -49,3 +51,4 @@ def home_view(request):
     else:
         form = newForm()
         return render (request,"pages/student_new.html",{'form':form})
+
