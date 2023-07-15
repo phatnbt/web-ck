@@ -51,4 +51,10 @@ def home_view(request):
     else:
         form = newForm()
         return render (request,"pages/student_new.html",{'form':form})
+    
 
+def password(register):
+     return render(register,'registration/password_change.html')
+
+def login(register):
+     return render(register,'registration/login.html')

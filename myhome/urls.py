@@ -12,6 +12,7 @@ urlpatterns =[
     path('/teachers',views.list_teachers),
     path('/home/<int:id>',views.list_id),
     path('/teachers/<int:id>',views.list_id1),
-    
-    
+    path ('/pass/',views.password),
+    path('/logout/',views.home_view,name='logout'),
+    # path('/login/',views.list_teachers,name='login'),
 ]
