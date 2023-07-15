@@ -9,7 +9,7 @@ from .models import student
 from .models import teachers
 def list (request):
     Data ={'students':student.objects.all().order_by('-date')}
-    return render (request,'pages/base.html',Data)
+    return render (request,'pages/home.html',Data)
 def list_teachers (request):
     Data1 ={'teachers':teachers.objects.all()}
     return render (request,'pages/teachers.html',Data1)
