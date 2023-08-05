@@ -3,11 +3,12 @@ from .models import CustomUser
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 class newForm(forms.Form):
-    mssv = forms.CharField(max_length=200)
-    name = forms.CharField(max_length=200)
-    email = forms.CharField(max_length=200)
-    phone = forms.CharField(max_length=200)
-    date = forms.CharField(max_length=200)
+    ms = forms.CharField(max_length=100)
+    name= forms.CharField(max_length=200)
+    price = forms.CharField(max_length=200)
+    image = forms.ImageField()
+    description = forms.CharField(max_length=200)
+    number = forms.CharField(max_length=200)
 
 
 class CustomUserCreationForm (UserCreationForm):

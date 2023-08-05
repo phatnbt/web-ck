@@ -1,0 +1,79 @@
+{% extends "pages/home.html" %}
+
+
+
+{% block title %}Quản lý cửa hàng{% endblock %}
+{% block content %}
+
+{% if user.is_authenticated %}
+<div class="MuiBoxItemBody">
+    <div class="MuiBoxItem_Left MuiBoxStudent">
+        <div class="MuiBox_Button">
+            <div class="row">
+                <div class="col-9">
+                    <a href="/myhome/flowers/create" class="btnCreate btn">
+                        Thêm
+                    </a>
+                    <button class="btnExcel btn">
+                        Xuất File Excel
+                    </button>
+                </div>
+
+                <div class="search col-3 justify-content-end">
+                    <input type="text" id="txtSearch" class="search_input" placeholder="Tìm tên hoặc MSSV">
+                    <button type="button" class="btn btnSearch btn-primary" id="search"><i
+                            class="fas fa-search"></i></button>
+                </div>
+            </div>
+
+        </div>
+        <div class="MuiBox">
+            <div class="col-12">
+                <table class="table" id="table2excel">
+                    <thead>
+                        <tr class="table-title">
+                            <th>STT</th>
+                            <th>Mã số</th>
+                            <th>Tên</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    </tbody>
+                    <tbody id="tbodyGiangVien">
+                        {% for flower in flowers %}
+                        <tr>
+                            <td class="demo-item">{{flower.stt}}</td>
+                            <td class="demo-item">{{flower.ms}}</td>
+                            <td class="demo-item">{{flower.name}}</td>
+                            <td class="demo-item">{{flower.price}}</td>
+                            <td class="demo-item">{{flower.number}}</td>
+
+                            <td>
+                                <button class=" btn btnDelete">Xóa</button>
+                            </td>
+                            <td><a href="flowers/{{flower.id}}">Xem Thêm</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                </table>
+                <button class="btn btn-primary">Previous</button>
+                <button class="btn btn-primary">Next</button>
+            </div>
+        </div>
+    </div>
+    <div class="MuiBoxItem_Right">
+    </div>
+</div>
+{% else %}
+<div class="MuiBoxItemBody">
+    <p  style="background-color: rgb(255, 21, 0); width: 100%; padding: 5px 10px; color: #fff; font-weight: 600;">
+        Hãy đăng nhập tài khoản của bạn để có thể dễ dàng quản lý
+    </p>
+    
+</div>
+{% endif %}
+
+{% endblock %}

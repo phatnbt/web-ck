@@ -1,0 +1,306 @@
+{% extends "nguoidung/index.html" %}
+
+{% block style %}
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: 0;
+    }
+
+
+    :root {
+        --border: 2px solid grey;
+        --boxshadow: 0 5px 20px grey;
+
+        --black: black;
+        --white: white;
+        --primary: lightblue;
+        --lightgrey: lightgrey;
+        --gray: gray;
+    }
+
+
+    .nav-text {
+        color: #ffffff;
+        font-size: 2.4rem;
+        margin: 0 1rem;
+    }
+
+    html {
+        font-size: 10px;
+    }
+
+    :root {
+        --text-color: #ffffff;
+        --bg-color: #007bff;
+        --bg-hover: #0056b3;
+    }
+
+    .btn {
+        display: block;
+        width: 15rem;
+        height: 5rem;
+        text-align: center;
+        line-height: 4rem;
+        font-size: 2rem;
+        color: var(--text-color);
+        border: 2px solid var(--text-color);
+        background-color: var(--bg-color);
+        margin: 1.5rem 0;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .btn:hover {
+        background-color: var(--bg-hover);
+    }
+
+    /* CSS */
+    #header .navbar-brand,
+    #header .navbar-nav .nav-link,
+    #header .icons div {
+        display: block;
+        font-size: 2.4rem;
+        margin: 0 1rem;
+        color: black;
+    }
+
+    #header .navbar-nav .nav-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.5rem;
+    }
+
+    #home {
+        width: 100%;
+        height: 80vh;
+    }
+
+    #home .content h1 {
+        font-size: 3.5rem;
+        margin: 1rem 0;
+        color: black;
+        font-weight: 400;
+    }
+
+    #home .content h3 {
+        font-size: 5.5rem;
+        margin: 2rem 0;
+        color: black;
+    }
+
+    #home .content a {
+        display: block;
+        width: 15rem;
+        height: 5rem;
+        text-align: center;
+        line-height: 4rem;
+        font-size: 2rem;
+        color: black;
+        border: 2px solid black;
+        background-color: transparent;
+        margin: 1.5rem 0;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    #about .about-description h3 {
+        font-size: 2.8rem;
+        color: rgba(120, 61, 28, 0.847);
+        font-weight: 400;
+        margin: 1rem 0;
+    }
+
+    #about .about-description h1 {
+        font-size: 3.2rem;
+        margin: 1rem 0;
+    }
+
+    #about .about-description p {
+        font-size: 2rem;
+        color: gray;
+        margin: 1rem 0;
+    }
+
+    #about .about-description a {
+        display: block;
+        width: 15rem;
+        height: 5rem;
+        text-align: center;
+        line-height: 4rem;
+        font-size: 2rem;
+        color: rgba(120, 61, 28, 0.847);
+        border: 2px solid rgba(120, 61, 28, 0.847);
+        background-color: transparent;
+        margin: 1.5rem 0;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    #about .about-description a:hover {
+        color: lightblue;
+    }
+
+    #about .about-description .icons {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 1rem;
+        row-gap: 1rem;
+    }
+
+    #about .about-description .icons .icon {
+        flex-grow: 1;
+        width: 14rem;
+        height: 12rem;
+        background: lightgrey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #about .about-description .icons .icon i {
+        font-size: 4rem;
+        color: rgba(120, 61, 28, 0.847);
+    }
+
+    #about .about-description .icons .icon span {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-top: 1rem;
+    }
+
+    #menu {
+        background: lightgrey;
+        margin-top: 5rem;
+        padding: 4rem 1rem;
+    }
+
+    #menu h1 {
+        text-align: center;
+        font-size: 3.2rem;
+        margin-bottom: 4rem;
+    }
+
+    #menu h3 {
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    #menu p {
+        font-size: 1.4rem;
+        color: gray;
+    }
+
+    #menu .btn {
+        display: block;
+        width: 15rem;
+        height: 5rem;
+        text-align: center;
+        line-height: 4rem;
+        font-size: 2rem;
+        color: rgba(120, 61, 28, 0.847);
+        border: 2px solid rgba(120, 61, 28, 0.847);
+        background-color: transparent;
+        margin: auto;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    #menu .menu-item {
+        transition: all 0.5s;
+    }
+
+    #menu .menu-item:hover {
+        background-color: white;
+        box-shadow: 0 5px 20px grey;
+        border-radius: 3px;
+        transform: scale(1.02);
+    }
+
+    /* Media Query */
+    @media (max-width: 990px) {
+        #header .navbar-nav {
+            background: white !important;
+            border-radius: 0.3rem;
+        }
+
+        #header .navbar-nav .nav-link {
+            color: black;
+            padding: 1rem 2rem;
+        }
+    }
+
+    .menu-item img {
+        width: 100%;
+        /* Đảm bảo hình ảnh chiếm 100% chiều rộng của khung */
+        height: 200px;
+        /* Đặt chiều cao tùy ý cho khung ảnh */
+        object-fit: cover;
+        /* Hiển thị hình ảnh đủ kích thước nhưng không bị méo */
+        object-position: center center;
+        /* Căn giữa hình ảnh trong khung */
+    }
+
+    .img-fluid {
+        width: 100%;
+        /* Hình ảnh chiếm toàn bộ chiều rộng của cột */
+        height: 100%;
+        object-fit: cover;
+        /* Hiển thị hình ảnh đủ kích thước nhưng không bị méo */
+        object-position: center center;
+        /* Căn giữa hình ảnh trong khung */
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<body>
+    <header id="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-transparent py-5">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><i class="fa-solid fa-seedling"></i> Flower</a>
+                    <button class="navbar-toggler text-bg-light" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#menu">Menu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="icons" style="display: flex;">
+                            <div class="cart fa-solid fa-cart-shopping"></div>
+                            <div class="user fa-solid fa-user"></div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    {% block content %}
+    
+    {% endblock %}
+
+    
+    <footer>
+        <p>&copy; 2023 Flower Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+{% endblock %}
