@@ -10,15 +10,6 @@
     <div class="MuiBoxItem_Left MuiBoxStudent">
         <div class="MuiBox_Button">
             <div class="row">
-                <div class="col-9">
-                    <a href="/myhome/flowers/create" class="btnCreate btn">
-                        Thêm
-                    </a>
-                    <button class="btnExcel btn">
-                        Xuất File Excel
-                    </button>
-                </div>
-
                 <div class="search col-3 justify-content-end">
                     <input type="text" id="txtSearch" class="search_input" placeholder="Tìm tên hoặc MSSV">
                     <button type="button" class="btn btnSearch btn-primary" id="search"><i
@@ -32,6 +23,7 @@
                 <table class="table" id="table2excel">
                     <thead>
                         <tr class="table-title">
+                            <th></th>
                             <th>STT</th>
                             <th>Mã số</th>
                             <th>Tên</th>
@@ -69,10 +61,10 @@
 </div>
 {% else %}
 <div class="MuiBoxItemBody">
-    <p  style="background-color: rgb(255, 21, 0); width: 100%; padding: 5px 10px; color: #fff; font-weight: 600;">
+    <p style="background-color: rgb(255, 21, 0); width: 100%; padding: 5px 10px; color: #fff; font-weight: 600;">
         Hãy đăng nhập tài khoản của bạn để có thể dễ dàng quản lý
     </p>
-    
+
 </div>
 {% endif %}
 
