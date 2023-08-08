@@ -6,12 +6,17 @@
 {% block content %}
 
 {% if user.is_authenticated %}
+<style>
+    button i{
+        display: flex;
+    }
+</style>
 <div class="MuiBoxItemBody">
     <div class="MuiBoxItem_Left MuiBoxStudent">
         <div class="MuiBox_Button">
             <div class="row">
                 <div class="search col-3 justify-content-end">
-                    <input type="text" id="txtSearch" class="search_input" placeholder="Tìm tên hoặc MSSV">
+                    <input type="text" id="txtSearch" class="search_input" placeholder="Tìm tên hoặc Mã Số">
                     <button type="button" class="btn btnSearch btn-primary" id="search"><i
                             class="fas fa-search"></i></button>
                 </div>
