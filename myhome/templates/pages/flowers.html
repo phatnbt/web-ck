@@ -6,6 +6,12 @@
 {% block content %}
 
 {% if user.is_authenticated %}
+<style>
+    button i{
+        display: flex;
+    }
+
+</style>
 <div class="MuiBoxItemBody">
     <div class="MuiBoxItem_Left MuiBoxStudent">
         <div class="MuiBox_Button">
@@ -32,7 +38,8 @@
                 <table class="table" id="table2excel">
                     <thead>
                         <tr class="table-title">
-                            <th>STT</th>
+                            <th></th>
+                            <!-- <th>STT</th> -->
                             <th>Mã số</th>
                             <th>Tên</th>
                             <th>Giá</th>
@@ -60,8 +67,8 @@
                     </tbody>
 
                 </table>
-                <button class="btn btn-primary">Previous</button>
-                <button class="btn btn-primary">Next</button>
+                <!-- <button class="btn btn-primary">Previous</button>
+                <button class="btn btn-primary">Next</button> -->
             </div>
         </div>
     </div>
@@ -70,10 +77,9 @@
 </div>
 {% else %}
 <div class="MuiBoxItemBody">
-    <p  style="background-color: rgb(255, 21, 0); width: 100%; padding: 5px 10px; color: #fff; font-weight: 600;">
+    <p style="background-color: rgb(255, 21, 0); width: 100%; padding: 5px 10px; color: #fff; font-weight: 600;">
         Hãy đăng nhập tài khoản của bạn để có thể dễ dàng quản lý
     </p>
-    
 </div>
 {% endif %}
 

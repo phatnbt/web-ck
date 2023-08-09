@@ -1,6 +1,7 @@
 {% extends "nguoidung/index.html" %}
 
 {% block style %}
+
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 
@@ -59,19 +60,34 @@
     }
 
     /* CSS */
+    #header {
+    min-height: 80vh;
+    background: url("/media/4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+
     #header .navbar-brand,
     #header .navbar-nav .nav-link,
     #header .icons div {
         display: block;
         font-size: 2.4rem;
         margin: 0 1rem;
-        color: black;
+        color: white;
+    }
+    #header .icons a{
+        display: block;
+        font-size: 2.4rem;
+        margin: 0 1rem;
+        color: white;
     }
 
     #header .navbar-nav .nav-link:hover {
         text-decoration: underline;
         text-underline-offset: 0.5rem;
     }
+    
 
     #home {
         width: 100%;
@@ -81,14 +97,14 @@
     #home .content h1 {
         font-size: 3.5rem;
         margin: 1rem 0;
-        color: black;
+        color: white;
         font-weight: 400;
     }
 
     #home .content h3 {
         font-size: 5.5rem;
         margin: 2rem 0;
-        color: black;
+        color: white;
     }
 
     #home .content a {
@@ -98,12 +114,13 @@
         text-align: center;
         line-height: 4rem;
         font-size: 2rem;
-        color: black;
-        border: 2px solid black;
+        color: wheat;
+        border: 2px solid wheat;
         background-color: transparent;
         margin: 1.5rem 0;
         text-decoration: none;
         transition: all 0.3s;
+        border-radius: 3px;
     }
 
     #about .about-description h3 {
@@ -174,7 +191,7 @@
 
     #menu {
         background: lightgrey;
-        margin-top: 5rem;
+        /* margin-top: 5rem; */
         padding: 4rem 1rem;
     }
 
@@ -274,12 +291,22 @@
 
 {% block body %}
 
+<<<<<<< HEAD
+=======
+<head>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <!-- FoneAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+
+>>>>>>> 7cf749c816db181d4a295737f097b9b514075bd0
 <body>
     <header id="header">
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-transparent py-5">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#"><i class="fa-solid fa-seedling"></i> Flower</a>
+                    <a class="navbar-brand" href="/myhome/home_page"><i class="fa-solid fa-seedling"></i> Flower</a>
                     <button class="navbar-toggler text-bg-light" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -288,19 +315,17 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav m-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                                <a class="nav-link active" aria-current="page" href="/myhome/home_page">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#about">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#menu">Menu</a>
+                                <a class="nav-link" href="/myhome/home_page#menu">Menu</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#contact">Contact</a>
                             </li>
                         </ul>
                         <div class="icons" style="display: flex;">
+<<<<<<< HEAD
                             <ul style="list-style: none; font-size: 16px;">
                                 <li class="user-selector-item">
                                     {% if user.is_authenticated %}
@@ -313,16 +338,39 @@
                                     </ul>
                                 </li>
                             </ul>
+=======
+                            <!-- <div class="cart fa-solid fa-cart-shopping"></div>
+                            <div class="user fa-solid fa-user"></div> -->
+                            <a class="cart fa-solid fa-cart-shopping" href="#"></a>
+                            <a class="user fa-solid fa-user" href="accounts/login/"></a>
+>>>>>>> 7cf749c816db181d4a295737f097b9b514075bd0
                         </div>
                     </div>
                 </div>
             </nav>
+            <div class="row" id="home">
+                <div class="col-6 me-auto d-flex align-items-center">
+                    <div class="content">
+                        <h1> Flower house</h1>
+                        <h3>Lorem ipsum dolor sit amet.</h3>
+                        <a href="#menu">Get started</a>
+                    </div>
+                </div>
+            </div>
         </div>
+        
     </header>
     {% block content %}
 
     {% endblock %}
 
+<<<<<<< HEAD
+=======
+
+    <footer>
+        <p>&copy; 2023 Flower Shop. All rights reserved.</p>
+    </footer>
+>>>>>>> 7cf749c816db181d4a295737f097b9b514075bd0
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

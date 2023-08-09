@@ -11,10 +11,9 @@
             <h3>Đăng Nhập</h3>
             {% csrf_token %}
             {{form.as_p}}
-            <input type="submit" value="Đăng Nhập"
-                style="padding: 5px 35px; color: #fff; background-color: rgb(34, 45, 134); border: 0; width: 26%;" />
+            <input type="submit" value="Log In" style="padding: 5px 35px; color: #fff; background-color: rgb(34, 45, 134); border: 0; width: 15%;"/>
         </form>
-        <a href="{% url 'password_change' %}">quen mat khau</a>
+        <a href="{% url 'password_change' %}">Forgot Password</a>
     </div>
 </div>
 
