@@ -10,7 +10,7 @@
     <div class="MuiBoxItem_Left MuiBoxStudent">
         <div class="MuiBox_Button">
             <div class="row">
-                <div class="col-9">
+                <div class="col-8">
                     <a href="/myhome/flowers/create" class="btnCreate btn">
                         Thêm
                     </a>
@@ -19,8 +19,8 @@
                     </button>
                 </div>
 
-                <div class="search col-3 justify-content-end">
-                    <input type="text" id="txtSearch" class="search_input" placeholder="Tìm tên hoặc MSSV">
+                <div class="search col-4 justify-content-end">
+                    <input type="text" id="txtSearch" class="search_input" placeholder="Tìm tên hoa">
                     <button type="button" class="btn btnSearch btn-primary" id="search"><i
                             class="fas fa-search"></i></button>
                 </div>
@@ -38,22 +38,23 @@
                             <th>Giá</th>
                             <th>Số lượng</th>
                             <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     </tbody>
                     <tbody id="tbodyGiangVien">
                         {% for flower in flowers %}
                         <tr>
-                            <td class="demo-item">{{flower.stt}}</td>
+                            <td class="demo-item">{{forloop.counter}}</td>
                             <td class="demo-item">{{flower.ms}}</td>
                             <td class="demo-item">{{flower.name}}</td>
                             <td class="demo-item">{{flower.price}}</td>
                             <td class="demo-item">{{flower.number}}</td>
 
                             <td>
-                                <button class=" btn btnDelete">Xóa</button>
+                                <a href="{% url 'delete_item' flower.id %}" class=" btn btnDelete">Xóa</a>
                             </td>
-                            <td><a href="flowers/{{flower.id}}">Xem Thêm</a></td>
+                            <td><a href="flowers/{{flower.id}}"  class=" btn btnRevision">Xem Thêm</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>

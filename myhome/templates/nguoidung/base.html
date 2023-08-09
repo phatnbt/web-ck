@@ -253,10 +253,27 @@
         object-position: center center;
         /* Căn giữa hình ảnh trong khung */
     }
+
+    .user-selector-item {
+        position: relative;
+    }
+
+    .user-selector-ul {
+        display: none;
+        position: absolute;
+        width: 100px;
+        background-color: #e5e6e8;
+        padding: 10px;
+    }
+
+    .user-selector-item:hover .user-selector-ul {
+        display: block;
+    }
 </style>
 {% endblock %}
 
 {% block body %}
+
 <body>
     <header id="header">
         <div class="container">
@@ -284,8 +301,18 @@
                             </li>
                         </ul>
                         <div class="icons" style="display: flex;">
-                            <div class="cart fa-solid fa-cart-shopping"></div>
-                            <div class="user fa-solid fa-user"></div>
+                            <ul style="list-style: none; font-size: 16px;">
+                                <li class="user-selector-item">
+                                    {% if user.is_authenticated %}
+                                    Xin chào: {{ user.username }}!
+                                    <ul style="list-style: none;" class="user-selector-ul">
+                                        <li style="padding: 0;">
+                                            <a href="http://127.0.0.1:8000/myhome/home">Quay về trang chủ</a>
+                                            {% endif %}
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -293,13 +320,9 @@
         </div>
     </header>
     {% block content %}
-    
+
     {% endblock %}
 
-    
-    <footer>
-        <p>&copy; 2023 Flower Shop. All rights reserved.</p>
-    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -4,12 +4,11 @@
 <main>
    
     <section class="menu" id="menu">
-        <h1>Our Flower</h1>
+        <h1>Danh sách hoa</h1>
         <div class="container">
             <div class="row gx-2 gy-3">
                 {% for flower in flowers %}
                 <div class="col-12 col-md-6 col-lg-4 col-xl-3 text-center p-4 menu-item">
-                   
                     <img src="{{flower.image.url}}" width="50%" class="image_flower">
                     <h3>{{flower.name}}</h3>
                     <p>{{flower.price}}</p>
