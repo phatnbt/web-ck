@@ -216,6 +216,10 @@
     .MuiBoxItem.active {
         background: #F2F9FF;
     }
+    .MuiBoxItem a{
+        text-decoration: none;
+        color: #0d6efd;
+    }
 
     /******************/
     .MuiBoxItemBody {
@@ -391,6 +395,10 @@
 
     .btnDelete {
         background: #eb4146;
+        color: #fff;
+    }
+    .btnXt {
+        background: #63b4f6;
         color: #fff;
     }
 
@@ -668,6 +676,10 @@
             <div class="MuiBoxHeaderTop" id="header">
                 <h3 class="MuiTypography-h3">{% block title %}{% endblock %}</h3>
                 <div class="MuiBoxHeaderInfo">
+                    <div class="MuiBoxItem">
+                        <!-- <p class="MuiBoxText">Trợ Giúp</p> -->
+                        <a class="MuiBoxText" href="/myhome/home_page">Quay về trang chủ</a>
+                    </div>
                     <div class="MuiBoxItem">
                         <div class="avatar-acount">
                             <div class="avatar-text">

@@ -6,12 +6,18 @@
 {% block content %}
 
 {% if user.is_authenticated %}
+<style>
+    button i{
+        display: flex;
+    }
+
+</style>
 <div class="MuiBoxItemBody">
     <div class="MuiBoxItem_Left MuiBoxStudent">
         <div class="MuiBox_Button">
             <div class="row">
                 <div class="search col-3 justify-content-end">
-                    <input type="text" id="txtSearch" class="search_input" placeholder="Tìm tên hoặc MSSV">
+                    <input type="text" id="txtSearch" class="search_input" placeholder="Tìm tên hoặc Mã Số">
                     <button type="button" class="btn btnSearch btn-primary" id="search"><i
                             class="fas fa-search"></i></button>
                 </div>
@@ -24,11 +30,12 @@
                     <thead>
                         <tr class="table-title">
                             <th></th>
-                            <th>STT</th>
+                            <!-- <th>STT</th> -->
                             <th>Mã số</th>
                             <th>Tên</th>
                             <th>Giá</th>
                             <th>Số lượng</th>
+                            <th></th>
                             <th></th>
                         </tr>
                     </thead>
@@ -45,14 +52,14 @@
                             <td>
                                 <button class=" btn btnDelete">Xóa</button>
                             </td>
-                            <td><a href="flowers/{{flower.id}}">Xem Thêm</a></td>
+                            <td><a class="btn btnXt" href="flowers/{{flower.id}}">Xem Thêm</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>
 
                 </table>
-                <button class="btn btn-primary">Previous</button>
-                <button class="btn btn-primary">Next</button>
+                <!-- <button class="btn btn-primary">Previous</button>
+                <button class="btn btn-primary">Next</button> -->
             </div>
         </div>
     </div>
@@ -64,7 +71,6 @@
     <p style="background-color: rgb(255, 21, 0); width: 100%; padding: 5px 10px; color: #fff; font-weight: 600;">
         Hãy đăng nhập tài khoản của bạn để có thể dễ dàng quản lý
     </p>
-
 </div>
 {% endif %}
 
