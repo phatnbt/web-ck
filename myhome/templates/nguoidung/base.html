@@ -60,25 +60,34 @@
     }
 
     /* CSS */
+    #header {
+    min-height: 80vh;
+    background: url("/media/4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+
     #header .navbar-brand,
     #header .navbar-nav .nav-link,
     #header .icons div {
         display: block;
         font-size: 2.4rem;
         margin: 0 1rem;
-        color: black;
+        color: white;
     }
     #header .icons a{
         display: block;
         font-size: 2.4rem;
         margin: 0 1rem;
-        color: black;
+        color: white;
     }
 
     #header .navbar-nav .nav-link:hover {
         text-decoration: underline;
         text-underline-offset: 0.5rem;
     }
+    
 
     #home {
         width: 100%;
@@ -88,14 +97,14 @@
     #home .content h1 {
         font-size: 3.5rem;
         margin: 1rem 0;
-        color: black;
+        color: white;
         font-weight: 400;
     }
 
     #home .content h3 {
         font-size: 5.5rem;
         margin: 2rem 0;
-        color: black;
+        color: white;
     }
 
     #home .content a {
@@ -105,12 +114,13 @@
         text-align: center;
         line-height: 4rem;
         font-size: 2rem;
-        color: black;
-        border: 2px solid black;
+        color: wheat;
+        border: 2px solid wheat;
         background-color: transparent;
         margin: 1.5rem 0;
         text-decoration: none;
         transition: all 0.3s;
+        border-radius: 3px;
     }
 
     #about .about-description h3 {
@@ -181,7 +191,7 @@
 
     #menu {
         background: lightgrey;
-        margin-top: 5rem;
+        /* margin-top: 5rem; */
         padding: 4rem 1rem;
     }
 
@@ -304,7 +314,17 @@
                     </div>
                 </div>
             </nav>
+            <div class="row" id="home">
+                <div class="col-6 me-auto d-flex align-items-center">
+                    <div class="content">
+                        <h1> Flower house</h1>
+                        <h3>Lorem ipsum dolor sit amet.</h3>
+                        <a href="#menu">Get started</a>
+                    </div>
+                </div>
+            </div>
         </div>
+        
     </header>
     {% block content %}
 
