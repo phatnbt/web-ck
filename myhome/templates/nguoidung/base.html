@@ -309,7 +309,13 @@
                             <!-- <div class="cart fa-solid fa-cart-shopping"></div>
                             <div class="user fa-solid fa-user"></div> -->
                             <a class="cart fa-solid fa-cart-shopping" href="#"></a>
-                            <a class="user fa-solid fa-user" href="accounts/login/"></a>
+                            {% if user.is_authenticated %}
+                            {{ user.username }}!
+                            <a class="user fa-solid fa-user" href="/myhome/home"></a>
+                            {% else %}
+                            <a class="user fa-solid fa-user" href="{% url 'login' %}"></a>
+                            {% endif %}
+                            <!-- <a class="user fa-solid fa-user" href="accounts/login/"></a> -->
                         </div>
                     </div>
                 </div>
