@@ -2,16 +2,22 @@
 
 {% block title %}Đăng nhập{% endblock %}
 {% block content %}
+<style>
+    a {
+        text-decoration: none;
+    }
+</style>
 <div class="MuiBoxItemBody">
 
     <a href="http://127.0.0.1:8000/myhome/home" class="">Quay Lại trang quản lý</a>
     <div class="MuiBoxItem_Left MuiBoxStudent " style="text-align: center;">
-        
-        <form action="" method="post" style="text-align: center; padding: 50px 0 5px;"> 
+
+        <form action="" method="post" style="text-align: center; padding: 50px 0 5px;">
             <h3>Đăng Nhập</h3>
             {% csrf_token %}
             {{form.as_p}}
-            <input type="submit" value="Log In" style="padding: 5px 35px; color: #fff; background-color: rgb(34, 45, 134); border: 0; width: 15%;"/>
+            <input type="submit" value="Log In"
+                style="padding: 5px 35px; color: #fff; background-color: rgb(34, 45, 134); border: 0; width: 15%;" />
         </form>
         <a href="{% url 'password_change' %}">Forgot Password</a>
     </div>
