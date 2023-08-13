@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from .form import newForm
 from .models import flowers
+from django.contrib.auth import views as auth_views
+from django.urls import reverse
 
 # Create your views here.
 from django.http import HttpResponse
@@ -13,8 +15,10 @@ def home_page (request):
     Data1 ={'flowers':flowers.objects.all()}
     return render (request,'nguoidung/home.html',Data1)
 
-def pan(contact):
-    return render(contact,'pages/contact.html')
+def pan(request):
+    # Thêm liên kết đặt lại mật khẩu ở đây
+    password_reset_link = reverse('password_reset')
+    return render(request, 'pages/contact.html', {'password_reset_link': password_reset_link})
 def list_id(request,id):
     flower= flowers.objects.get(id=id)
     return render (request,'pages/detail.html',{"flowers":flower})
