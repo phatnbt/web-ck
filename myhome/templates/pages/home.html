@@ -216,16 +216,20 @@
     .MuiBoxItem.active {
         background: #F2F9FF;
     }
-    .MuiBoxItem a{
+    .MuiBoxItem a {
         text-decoration: none;
         color: #0d6efd;
     }
 
     /******************/
     .MuiBoxItemBody {
-        padding: 32px 32px 96px;
+        margin: 32px 32px 96px;
         display: flex;
-        width: 100%
+        width: 90%;
+
+        padding: 15px 15px;
+        border-radius: 6px;
+        background: #fff;
     }
 
 
@@ -233,11 +237,8 @@
         width: 83.3333%;
     }
 
-    .MuiBoxStudent {
-        background: #fff;
-        padding: 15px 15px;
-        border-radius: 6px;
-    }
+    /* .MuiBoxStudent {
+    } */
 
     .MuiBox {
         display: flex;
@@ -290,7 +291,13 @@
 
     .group {
         margin: 0 200px;
-        padding: 0px 0;
+        padding: 0;
+    }
+
+    .group-detail {
+        background-color: #ffffff;
+        padding: 20px;
+        text-align: center;
     }
 
     .bg-bisque {
@@ -626,6 +633,28 @@
         width: 50%;
         padding: 5px;
     }
+
+    /* .MuiBoxProductNew {
+    } */
+
+    .MuiBoxProductNew form {
+        padding: 15px 0;
+        margin: auto;
+        width: 50%;
+    }
+
+    .MuiBoxProductNew p {
+        display: flex;
+    }
+    .MuiBoxProductNew p label {
+        text-align: start;
+        width: 30%;
+        padding: 0 10px;
+    }
+
+    .MuiBoxProductNew input {
+        width: 65%;
+    }
 </style>
 {% endblock %}
 
@@ -662,7 +691,7 @@
                                 </div>
                                 <div class="ListItemTitle">
                                     <div class="ListItemText">
-                                        Danh sách hoa
+                                        Quản Lý
                                     </div>
                                 </div>
                             </a>
@@ -697,6 +726,7 @@
                             {% else %}
                             <a href="{% url 'login' %}">Log In</a>
                             {% endif %}
+                        </p>
                     </div>
                 </div>
             </div>

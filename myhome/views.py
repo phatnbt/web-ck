@@ -23,11 +23,11 @@ def error(error):
     return render(error,'pages/error.html')
 def register(register):
     return render(register,'registration/login.html')
+
 def home_view(request):
     if request.method =="POST":
         form = newForm(request.POST, request.FILES)
-        
-        if form.is_valid():
+        if not form.is_valid():
             post = flowers()
             post.ms = request.POST['ms']
             post.name = request.POST['name']
@@ -35,10 +35,8 @@ def home_view(request):
             post.image = request.POST['image']
             post.description = request.POST['description']
             post.number = request.POST['number']
-        
-            
             post.save()
-            return render (request,"pages/home.html")
+            return render (request,"pages/success.html")
     else:
         form = newForm()
         return render (request,"pages/flowers_new.html", {'form':form})
@@ -55,3 +53,8 @@ def flower_detail(request, id):
 
 def login(register):
      return render(register,'registration/login.html')
+
+def delete_item(request, id):
+    item = flowers.objects.get(id=id)
+    item.delete()
+    return render(request, 'pages/delete.html')

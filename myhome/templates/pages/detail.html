@@ -1,35 +1,38 @@
 {% extends "pages/home.html" %}
 {% block title %}
+Chi tiết sản phẩm
 {% endblock %}
 {% block content %}
 <div class="MuiBoxItem_Left MuiBoxStudent">
     <div class="information py-2">
         <form action="" class="formQLTT">
             <h3 class="text-center">Chi tiết thông tin</h3>
-            <div class="group mssv">
-                <img src="{{flowers.image.url}}" data-src="{{ flowers.image.url }}" width="100px" height="100px"/>
-                
-                <div class="row">
-                    <div class="col-6 detail-item">
-                        <label for="" class="detail-label">Mã số hoa:</label>
-                        <span class="detail_text" id="mssv">{{flowers.ms}}</span>
-                    </div>
-                    <div class="col-6 detail-item">
-                        <label for="" class="detail-label">Tên hoa:</label>
-                        <span class="detail_text" id="name">{{flowers.name}}</span>
-                    </div>
-                    <div class="col-6 detail-item ">
-                        <label for="" class="detail-label">Description:</label>
-                        <span class="detail_text" id="email">{{flowers.description}}</span>
-                    </div>
-                    <div class="col-6 detail-item">
-                        <label for="" class="detail-label">Số lượng:</label>
-                        <span class="detail_text" id="phone">{{flowers.number}}</span>
-                    </div>
-                    <div class="col-12 py-2">
-                        <div class="row justify-content-end">
-                            <div class="col-2 txtBtn">
-                                <a href="http://127.0.0.1:8000/myhome/home" type="button" class="btn txtOK">Quay Lại</a>
+            <div class="group">
+                <div class="group-detail">
+                    <img src="{{flowers.image.url}}" data-src="{{ flowers.image.url }}" width="200px" height="200px"/>
+                    
+                    <div class="row">
+                        <div class="col-6 detail-item">
+                            <label for="" class="detail-label">Mã số hoa:</label>
+                            <span class="detail_text" id="mssv">{{flowers.ms}}</span>
+                        </div>
+                        <div class="col-6 detail-item">
+                            <label for="" class="detail-label">Tên hoa:</label>
+                            <span class="detail_text" id="name">{{flowers.name}}</span>
+                        </div>
+                        <div class="col-6 detail-item ">
+                            <label for="" class="detail-label">Description:</label>
+                            <span class="detail_text" id="email">{{flowers.description}}</span>
+                        </div>
+                        <div class="col-6 detail-item">
+                            <label for="" class="detail-label">Số lượng:</label>
+                            <span class="detail_text" id="phone">{{flowers.number}}</span>
+                        </div>
+                        <div class="col-12 py-2">
+                            <div class="row justify-content-end">
+                                <div class="col-4 txtBtn">
+                                    <a href="http://127.0.0.1:8000/myhome/home" type="button" class="btn txtOK">Quay Lại</a>
+                                </div>
                             </div>
                         </div>
                     </div>

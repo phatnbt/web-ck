@@ -61,11 +61,11 @@
 
     /* CSS */
     #header {
-    min-height: 80vh;
-    background: url("/media/4.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+        min-height: 80vh;
+        background: url("/media/4.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     #header .navbar-brand,
@@ -76,7 +76,8 @@
         margin: 0 1rem;
         color: white;
     }
-    #header .icons a{
+
+    #header .icons a {
         display: block;
         font-size: 2.4rem;
         margin: 0 1rem;
@@ -87,7 +88,7 @@
         text-decoration: underline;
         text-underline-offset: 0.5rem;
     }
-    
+
 
     #home {
         width: 100%;
@@ -270,6 +271,22 @@
         object-position: center center;
         /* Căn giữa hình ảnh trong khung */
     }
+
+    .user-selector-item {
+        position: relative;
+    }
+
+    .user-selector-ul {
+        display: none;
+        position: absolute;
+        width: 100px;
+        background-color: #e5e6e8;
+        padding: 10px;
+    }
+
+    .user-selector-item:hover .user-selector-ul {
+        display: block;
+    }
 </style>
 {% endblock %}
 
@@ -306,6 +323,19 @@
                             </li>
                         </ul>
                         <div class="icons" style="display: flex;">
+
+                            <ul style="list-style: none; font-size: 16px;">
+                                <li class="user-selector-item">
+                                    {% if user.is_authenticated %}
+                                    Xin chào: {{ user.username }}!
+                                    <ul style="list-style: none;" class="user-selector-ul">
+                                        <li style="padding: 0;">
+                                            <a href="http://127.0.0.1:8000/myhome/home">Quay về trang chủ</a>
+                                            {% endif %}
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
                             <!-- <div class="cart fa-solid fa-cart-shopping"></div>
                             <div class="user fa-solid fa-user"></div> -->
                             <a class="cart fa-solid fa-cart-shopping" href="#"></a>
@@ -330,13 +360,11 @@
                 </div>
             </div>
         </div>
-        
+
     </header>
     {% block content %}
 
     {% endblock %}
-
-
     <footer>
         <p>&copy; 2023 Flower Shop. All rights reserved.</p>
     </footer>
