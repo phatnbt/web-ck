@@ -14,6 +14,7 @@ urlpatterns =[
     path('/home/<int:id>',views.list_id),
     path('/flowers/<int:id>',views.flowers_id),
     path('/flower_detail/<int:id>',views.flower_detail),
+    path('/flowers/delete/<int:id>/', views.delete_item, name='delete_item'),
     # path ('/pass/',views.password),
     # path('/logout/',views.login, name='logout'),
     # path('/login/',views.list_flowers,name='login'),
