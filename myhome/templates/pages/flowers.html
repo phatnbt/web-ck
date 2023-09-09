@@ -7,7 +7,7 @@
 
 {% if user.is_authenticated %}
 <style>
-    button i{
+    button i {
         display: flex;
     }
 </style>
@@ -19,9 +19,6 @@
                     <a href="/myhome/flowers/create" class="btnCreate btn">
                         Thêm
                     </a>
-                    <button class="btnExcel btn">
-                        Xuất File Excel
-                    </button>
                 </div>
 
                 <div class="search col-4 justify-content-end">
@@ -60,7 +57,7 @@
                             <td>
                                 <a href="{% url 'delete_item' flower.id %}" class=" btn btnDelete">Xóa</a>
                             </td>
-                            <td><a href="flowers/{{flower.id}}"  class=" btn btnRevision">Xem Thêm</a></td>
+                            <td><a href="flowers/{{flower.id}}" class=" btn btnRevision">Xem Thêm</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>
