@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import CustomUser
 from .form import CustomUserCreationForm, CustomUserChangeForm
-from .models import CustomUser
+# from .models import CustomUser
 from .models import flowers
 from django.contrib.auth.admin import UserAdmin
 # class StudentAdmin (admin.ModelAdmin):
