@@ -16,3 +16,6 @@ class flowers (models.Model):
     image = models.ImageField(null=True)
     description = models.TextField()
     number = models.TextField()
+
+# class register(models.Model):
+#     password 
