@@ -19,4 +19,5 @@ urlpatterns =[
     # path('/logout/',views.login, name='logout'),
     # path('/login/',views.list_flowers,name='login'),
     path('/register', views.register, name='register'),
+    # path(''),
 ]

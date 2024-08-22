@@ -12,10 +12,15 @@ class CustomUser (AbstractUser):
 class flowers (models.Model):
     ms = models.CharField(max_length=100)
     name= models.TextField()
-    price = models.TextField()
+    price = models.FloatField()
     image = models.ImageField(null=True)
     description = models.TextField()
-    number = models.TextField()
+    number = models.IntegerField()
 
-# class register(models.Model):
-#     password 
+class gioHang (models.Model):
+    items = models.IntegerField()
+    user = models.TextField()
+    number = models.IntegerField()
+    price = models.FloatField()
+    ngay = models.DateField()
+    pttt = models.BooleanField(default=False)
