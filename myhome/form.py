@@ -34,7 +34,7 @@ class dangKi(forms.Form):
     email = forms.EmailField(max_length=200)
     password1 = forms.CharField(label = 'Mật Khẩu', widget = forms.PasswordInput())
     password2 = forms.CharField(label = 'Xác nhận mật Khẩu', widget = forms.PasswordInput())
-    phonenumber = forms.CharField(max_length=12)
+    phonenumber = forms.CharField(label = 'Số điện thoại', max_length=12)
 
     def clean(self):
         cleaned_data = super().clean()

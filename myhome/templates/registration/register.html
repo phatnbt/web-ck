@@ -1,18 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "pages/base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
+{% block title %}Đăng kí{% endblock %}
+{% block body %}
+<style>
+    a {
+        text-decoration: none;
+    }
 
-<body>
-    <h2>Đăng kí</h2>
-    <form method="post">
-        {%csrf_token%}
-        {{form.as_p}}
-        <button type="submit">Đăng kí</button>
-    </form>
-</body>
+    p label {
+        width: 15%;
+    }
 
-</html>
+    p input {
+        width: 250px;
+    }
+</style>
+<div class="MuiBoxItemBody">
+    <div class="MuiBoxItem_Left MuiBoxStudent " style="text-align: center;">
+        <h3>Đăng kí</h3>
+        <form method="post" style="text-align: center; padding: 50px 0 5px;">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit"
+                style="padding: 5px 35px; color: #fff; background-color: rgb(34, 45, 134); border: 0; width: 15%;">Đăng
+                kí</button>
+        </form>
+    </div>
+</div>
+{% endblock body %}

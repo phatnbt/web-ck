@@ -6,12 +6,22 @@
     a {
         text-decoration: none;
     }
+
+    p label {
+        width: 5%;
+    }
+
+    p input {
+        width: 200px;
+    }
 </style>
 <div class="MuiBoxItemBody">
     <div class="MuiBoxItem_Left MuiBoxStudent " style="text-align: center;">
-        <form action="" method="post" style="text-align: center; padding: 50px 0 5px;"> {% csrf_token %}
+        <h3>Đăng nhập</h3>
+        <form action="" method="post" style="text-align: center; padding: 50px 0 5px;">
+            {% csrf_token %}
             {{form.as_p}}
-            <input type="submit" value="Log In"
+            <input type="submit" value="Đăng nhập"
                 style="padding: 5px 35px; color: #fff; background-color: rgb(34, 45, 134); border: 0; width: 15%;" />
         </form>
         <a href="{% url 'password_change' %}">Quên mật khẩu</a>
