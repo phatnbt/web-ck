@@ -11,6 +11,7 @@ from django.http import HttpResponse
 def list_flowers (request):
     Data1 ={'flowers':flowers.objects.all()}
     return render (request,'pages/flowers.html',Data1)
+
 def home_page (request):
     Data1 ={'flowers':flowers.objects.all()}
     return render (request,'nguoidung/home.html',Data1)
@@ -33,31 +34,34 @@ def register(request):
             return render(request, "pages/success.html")
     else:
         form = dangKi()
-
     return render(request, 'registration/register.html', {'form': form})
 
 def home_view(request):
     if request.method =="POST":
         form = newForm(request.POST, request.FILES)
-        if not form.is_valid():
-            post = flowers()
-            post.ms = request.POST['ms']
-            post.name = request.POST['name']
-            post.price = request.POST['price']
-            post.image = request.POST['image']
-            post.description = request.POST['description']
-            post.number = request.POST['number']
-            post.save()
-            return render (request,"pages/success.html")
+        if not form.is_valid() and float(request.POST['price']) > 0 and int(request.POST['number']) > 0 :
+            ms = request.POST['ms']
+            if flowers.objects.filter(ms=ms).count() == 0:
+                post = flowers()
+                post.ms = request.POST['ms']
+                post.name = request.POST['name']
+                post.price = request.POST['price']
+                post.image = request.POST['image']
+                post.description = request.POST['description']
+                post.number = request.POST['number']
+                post.save()
+                return render (request,"pages/success.html")
+            else:
+                return render(request, 'pages/error.html')
+        else:
+                return render(request, 'pages/error.html')
     else:
         form = newForm()
         return render (request,"pages/flowers_new.html", {'form':form})
 
-
 def flowers_id(request, id):
     Flowers = flowers.objects.get(id=id)
     return render(request, 'pages/detail.html', {'flowers':Flowers})
-
 
 def flower_detail(request, id):
     Flower = flowers.objects.get(id=id)

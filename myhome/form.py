@@ -6,11 +6,16 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 class newForm(forms.Form):
     ms = forms.CharField(max_length=100)
     name= forms.CharField(max_length=200)
-    price = forms.CharField(max_length=200)
+    price = forms.FloatField()
     image = forms.ImageField()
     description = forms.CharField(max_length=200)
-    number = forms.CharField(max_length=200)
-
+    number = forms.IntegerField()
+    # def check(self):
+    #     if self.cleaned_price.get('price') <= 0:
+    #         raise forms.ValidationError('Giá không hợp lệ')
+    #     if self.cleaned_number.get('number') < 0:
+    #         raise forms.ValidationError('Số lượng không hợp lệ')
+    #     return self.cleaned_data
 
 class CustomUserCreationForm (UserCreationForm):
     class Meta (UserCreationForm.Meta):
