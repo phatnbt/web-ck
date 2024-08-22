@@ -1,8 +1,10 @@
 from urllib import request
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
-from .form import newForm
+from .form import newForm,dangKi
 from .models import flowers
+# from .forms import RegistrationForm
+# from django.http import HttpResponseRedirect
 
 # Create your views here.
 from django.http import HttpResponse
@@ -21,8 +23,18 @@ def list_id(request,id):
 
 def error(error):
     return render(error,'pages/error.html')
-def register(register):
-    return render(register,'registration/login.html')
+
+def register(request):
+    if request.method == "POST":
+        form = dangKi(request.POST)
+        if form.is_valid():
+            form.save()
+            print(form)
+            return render(request, "pages/success.html")
+    else:
+        form = dangKi()
+
+    return render(request, 'registration/register.html', {'form': form})
 
 def home_view(request):
     if request.method =="POST":
@@ -58,3 +70,5 @@ def delete_item(request, id):
     item = flowers.objects.get(id=id)
     item.delete()
     return render(request, 'pages/delete.html')
+
+
