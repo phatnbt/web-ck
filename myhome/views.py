@@ -16,8 +16,9 @@ def home_page (request):
     Data1 ={'flowers':flowers.objects.all()}
     return render (request,'nguoidung/home.html',Data1)
 
-def pan(contact):
+def contact(contact):
     return render(contact,'pages/contact.html')
+
 def list_id(request,id):
     flower= flowers.objects.get(id=id)
     return render (request,'pages/detail.html',{"flowers":flower})
@@ -75,4 +76,6 @@ def delete_item(request, id):
     item.delete()
     return render(request, 'pages/delete.html')
 
+def cart(cart):
+    return render(cart,'pages/cart.html')
 
